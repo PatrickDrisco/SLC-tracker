@@ -168,7 +168,7 @@ function migrate(s) {
     id: t.id || "tk" + Math.random().toString(36).slice(2),
     week: t.week || firstWeek,
     day: t.day || "Mon",
-    building: t.building || "DC1",
+    building: t.building || "DC2",
     task: t.task || t.title || "",
     testing: t.testing || "",
     support: t.support || "",
@@ -482,8 +482,8 @@ function TimelineView({ people, weeks, weekIdx, startIdx = 0, onPick }) {
 
 // ---- Weekly task board (day-column grid) ------------------------------------
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const BUILDINGS = ["DC1", "DC2"];
-const BUILDING_C = { DC1: "#6AA4D9", DC2: "#E8B14C" };
+const BUILDINGS = ["DC2", "DC3"];
+const BUILDING_C = { DC2: "#E8B14C", DC3: "#5BB98C" };
 const TASK_STATUS = {
   "Scheduled":   { c: "#79858F", label: "Scheduled" },
   "Not Ready":   { c: "#D96A6A", label: "Not Ready" },
@@ -511,7 +511,7 @@ function ScheduleView({ tasks, people, weeks, weekStart, archivedWeeks, archiveW
 
   const create = (day) => {
     const id = "tk" + Date.now();
-    addTask({ id, week, day, building: filter === "All" ? "DC1" : filter, task: "", testing: "", support: "", equipment: "", status: "Scheduled", assignees: [] });
+    addTask({ id, week, day, building: filter === "All" ? "DC2" : filter, task: "", testing: "", support: "", equipment: "", status: "Scheduled", assignees: [] });
     setEditing(id);
   };
   const cycleStatus = (t) => {
@@ -875,7 +875,7 @@ function LinksSection({ title, bucket, items, addLink, updLink, delLink }) {
 }
 
 // ---- Contacts ---------------------------------------------------------------
-const CONTACT_BUILDINGS = ["General", "DC1", "DC2"];
+const CONTACT_BUILDINGS = ["General", "DC2", "DC3"];
 function ContactsView({ contacts, addContact, updContact, delContact }) {
   return (
     <div>

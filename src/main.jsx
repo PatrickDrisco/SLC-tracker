@@ -26,8 +26,8 @@ function Login() {
   return (
     <div style={s.wrap}>
       <div style={s.card}>
-        <div style={s.brandRow}><span style={s.mark} /><span style={s.brand}>MCx</span><span style={s.brandThin}>DASHBOARD</span></div>
-        <div style={s.sub}>QTS CDR1 · Mechanical Commissioning</div>
+        <div style={s.brandRow}><span style={s.mark} /><span style={s.brand}>SLC1</span><span style={s.brandThin}>QA / QC</span></div>
+        <div style={s.sub}>Salt Lake City · SLC1 · Commissioning</div>
         {sent ? (
           <div style={s.sentBox}>
             <div style={s.sentTitle}>Check your email</div>
